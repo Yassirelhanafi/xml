@@ -1,0 +1,23 @@
+<!ELEMENT cloud_hybrid (overview, technologies, use_cases, security, future)>
+<!ELEMENT overview (description, benefits)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT benefits (benefit+)>
+<!ELEMENT benefit (#PCDATA)>
+
+<!ELEMENT technologies (technology+)>
+<!ELEMENT technology (name, description)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+
+<!ELEMENT use_cases (use_case+)>
+<!ELEMENT use_case (title, description)>
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT security (strategy+)>
+<!ELEMENT strategy (title, details)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT details (#PCDATA)>
+
+<!ELEMENT future (trend+)>
+<!ELEMENT trend (title, description)>
+<!ELEMENT description (#PCDATA)>
