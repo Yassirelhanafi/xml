@@ -1,0 +1,27 @@
+<!ELEMENT cloud_hybrid (overview, technologies, use_cases, security, future)>
+
+<!ELEMENT overview (overview_description, benefits)>
+<!ELEMENT overview_description (#PCDATA)>
+<!ELEMENT benefits (benefit+)>
+<!ELEMENT benefit (#PCDATA)>
+
+<!ELEMENT technologies (technology+)>
+<!ELEMENT technology (tech_name, tech_description, image?)>
+<!ELEMENT tech_name (#PCDATA)>
+<!ELEMENT tech_description (#PCDATA)>
+<!ELEMENT image (#PCDATA)>
+
+<!ELEMENT use_cases (use_case+)>
+<!ELEMENT use_case (usecase_title, usecase_description, image?)>
+<!ELEMENT usecase_title (#PCDATA)>
+<!ELEMENT usecase_description (#PCDATA)>
+
+<!ELEMENT security (strategy+)>
+<!ELEMENT strategy (security_title, security_details)>
+<!ELEMENT security_title (#PCDATA)>
+<!ELEMENT security_details (#PCDATA)>
+
+<!ELEMENT future (trend+)>
+<!ELEMENT trend (trend_title, trend_description, image?)>
+<!ELEMENT trend_title (#PCDATA)>
+<!ELEMENT trend_description (#PCDATA)>
