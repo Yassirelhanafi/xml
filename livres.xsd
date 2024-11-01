@@ -6,11 +6,28 @@
                 <xs:element name="overview">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="description" type="xs:string"/>
+                            <xs:element name="overview_question" type="xs:string"/>
+                            <xs:element name="overview_content" type="xs:string"/>
+                            <xs:element name="overiew_importance" type="xs:string"/>
                             <xs:element name="benefits">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="benefit" type="xs:string" maxOccurs="unbounded"/>
+                                        <xs:element name="benefit" maxOccurs="unbounded" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ecosysteme">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="content" type="xs:string"/>
+                            <xs:element name="plateforme" type="xs:string"/>
+                            <xs:element name="list">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="item" maxOccurs="unbounded" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -23,8 +40,16 @@
                             <xs:element name="technology" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="name" type="xs:string"/>
-                                        <xs:element name="description" type="xs:string"/>
+                                        <xs:element name="tech_name" type="xs:string"/>
+                                        <xs:element name="tech_description" type="xs:string"/>
+                                        <xs:element name="list">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="item" maxOccurs="unbounded" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="image" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -37,8 +62,8 @@
                             <xs:element name="use_case" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="title" type="xs:string"/>
-                                        <xs:element name="description" type="xs:string"/>
+                                        <xs:element name="usecase_title" type="xs:string"/>
+                                        <xs:element name="usecase_description" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -51,8 +76,8 @@
                             <xs:element name="strategy" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="title" type="xs:string"/>
-                                        <xs:element name="details" type="xs:string"/>
+                                        <xs:element name="security_title" type="xs:string"/>
+                                        <xs:element name="security_details" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -65,8 +90,8 @@
                             <xs:element name="trend" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="title" type="xs:string"/>
-                                        <xs:element name="description" type="xs:string"/>
+                                        <xs:element name="trend_title" type="xs:string"/>
+                                        <xs:element name="trend_description" type="xs:string"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
