@@ -132,7 +132,7 @@
                     <h3><xsl:value-of select="cloud_hybrid/overview/overview_question"/></h3>
                     <p><xsl:value-of select="cloud_hybrid/overview/overview_content"/></p>
                     <h3>Importance du cloud hybride</h3>
-                    <p><xsl:value-of select="cloud_hybrid/overview/overiew_importance"/></p>
+                    <p><xsl:value-of select="cloud_hybrid/overview/overview_importance"/></p>
                     <ul>
                         <xsl:for-each select="cloud_hybrid/overview/benefits/benefit">
                             <li><xsl:value-of select="."/></li>
@@ -142,18 +142,18 @@
                     <h2 id="ecosystem">Écosystèmes Cloud ouverts et extensibles</h2>
                     <div class="flex-container">
                         <div class="flex-item">
-                            <p><xsl:value-of select="cloud_hybrid/ecosysteme/content"/></p>
+                            <p><xsl:value-of select="cloud_hybrid/ecosysteme/content_container/content"/></p>
                             <ul>
-                                <xsl:for-each select="cloud_hybrid/ecosysteme/content/list/item">
+                                <xsl:for-each select="cloud_hybrid/ecosysteme/content_container/list/item">
                                     <li><xsl:value-of select="."/></li>
                                 </xsl:for-each>
                             </ul>
                         </div>
                         <div class="flex-item">
                             <h3>Plates-formes de gestion de Cloud</h3>
-                            <p><xsl:value-of select="cloud_hybrid/ecosysteme/plateforme"/></p>
+                            <p><xsl:value-of select="cloud_hybrid/ecosysteme/plateforme_container/plateforme"/></p>
                             <ul>
-                                <xsl:for-each select="cloud_hybrid/ecosysteme/plateforme/list/item">
+                                <xsl:for-each select="cloud_hybrid/ecosysteme/plateforme_container/list/item">
                                     <li><xsl:value-of select="."/></li>
                                 </xsl:for-each>
                             </ul>
@@ -165,7 +165,7 @@
                         <h3><xsl:value-of select="tech_name"/></h3>
                         <p><xsl:value-of select="tech_description"/></p>
                         <ul>
-                            <xsl:for-each select="cloud_hybrid/technologies/technology/tech_description/list/item">
+                            <xsl:for-each select="tech_description/list/item">
                                 <li><xsl:value-of select="."/></li>
                             </xsl:for-each>
                         </ul>
@@ -177,13 +177,29 @@
                     <h2 id="use_cases">Cas d'utilisation</h2>
                     <xsl:for-each select="cloud_hybrid/use_cases/use_case">
                         <h3><xsl:value-of select="usecase_title"/></h3>
-                        <p><xsl:value-of select="usecase_description"/></p>
+                        <p><xsl:value-of select="user_container/usecase_description"/></p>
+                    
+                        <xsl:if test="user_container/list">
+                            <ul>
+                                <xsl:for-each select="user_container/list/item">
+                                    <li><xsl:value-of select="."/></li>
+                                </xsl:for-each>
+                            </ul>
+                        </xsl:if>
                     </xsl:for-each>
 
                     <h2 id="security">Sécurité</h2>
                     <xsl:for-each select="cloud_hybrid/security/strategy">
                         <h3><xsl:value-of select="security_title"/></h3>
-                        <p><xsl:value-of select="security_details"/></p>
+                        <p><xsl:value-of select="security_container/security_details"/></p>
+                        
+                        <xsl:if test="security_container/list">
+                            <ul>
+                                <xsl:for-each select="security_container/list/item">
+                                    <li><xsl:value-of select="."/></li>
+                                </xsl:for-each>
+                            </ul>
+                        </xsl:if>
                     </xsl:for-each>
 
                     <h2 id="future">Futur</h2>

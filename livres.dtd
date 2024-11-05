@@ -1,13 +1,15 @@
 <!ELEMENT cloud_hybrid (overview, ecosysteme,technologies, use_cases, security, future)>
 
-<!ELEMENT overview (overview_question,overview_content , overiew_importance )>
+<!ELEMENT overview (overview_question,overview_content , overview_importance )>
 <!ELEMENT overview_question (#PCDATA)>
 <!ELEMENT overview_content (#PCDATA)>
-<!ELEMENT overiew_importance (#PCDATA)>
+<!ELEMENT overview_importance (#PCDATA)>
 
-<!ELEMENT ecosysteme (content, plateforme)>
-<!ELEMENT content (#PCDATA | list)*>
-<!ELEMENT plateforme (#PCDATA | list)*>
+<!ELEMENT ecosysteme (content_container, plateforme_container)>
+<!ELEMENT content_container (content , list*)>
+<!ELEMENT content (#PCDATA )>
+<!ELEMENT plateforme_container (plateforme , list*)>
+<!ELEMENT plateforme (#PCDATA )>
 
 
 <!ELEMENT technologies (technology+)>
@@ -19,13 +21,15 @@
 <!ELEMENT image (#PCDATA)>
 
 <!ELEMENT use_cases (use_case+)>
-<!ELEMENT use_case (usecase_title, usecase_description, image?)>
+<!ELEMENT use_case (usecase_title, user_container, image?)>
 <!ELEMENT usecase_title (#PCDATA)>
 <!ELEMENT usecase_description (#PCDATA)>
+<!ELEMENT user_container (usecase_description , list*)>
 
 <!ELEMENT security (strategy+)>
-<!ELEMENT strategy (security_title, security_details)>
+<!ELEMENT strategy (security_title, security_container)>
 <!ELEMENT security_title (#PCDATA)>
+<!ELEMENT security_container (security_details , list*)>
 <!ELEMENT security_details (#PCDATA)>
 
 <!ELEMENT future (trend+)>

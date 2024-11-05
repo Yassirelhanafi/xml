@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
     <xs:element name="cloud_hybrid">
         <xs:complexType>
             <xs:sequence>
@@ -8,32 +9,46 @@
                         <xs:sequence>
                             <xs:element name="overview_question" type="xs:string"/>
                             <xs:element name="overview_content" type="xs:string"/>
-                            <xs:element name="overiew_importance" type="xs:string"/>
-                            <xs:element name="benefits">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="benefit" maxOccurs="unbounded" type="xs:string"/>
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
+                            <xs:element name="overview_importance" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+
                 <xs:element name="ecosysteme">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="content" type="xs:string"/>
-                            <xs:element name="plateforme" type="xs:string"/>
-                            <xs:element name="list">
+                            <xs:element name="content_container">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="item" maxOccurs="unbounded" type="xs:string"/>
+                                        <xs:element name="content" type="xs:string"/>
+                                        <xs:element name="list" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="item" type="xs:string" maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="plateforme_container">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="plateforme" type="xs:string"/>
+                                        <xs:element name="list" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="item" type="xs:string" maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+
                 <xs:element name="technologies">
                     <xs:complexType>
                         <xs:sequence>
@@ -42,20 +57,21 @@
                                     <xs:sequence>
                                         <xs:element name="tech_name" type="xs:string"/>
                                         <xs:element name="tech_description" type="xs:string"/>
-                                        <xs:element name="list">
+                                        <xs:element name="list" minOccurs="0">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="item" maxOccurs="unbounded" type="xs:string"/>
+                                                    <xs:element name="item" type="xs:string" maxOccurs="unbounded"/>
                                                 </xs:sequence>
                                             </xs:complexType>
                                         </xs:element>
-                                        <xs:element name="image" type="xs:string"/>
+                                        <xs:element name="image" type="xs:string" minOccurs="0"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+
                 <xs:element name="use_cases">
                     <xs:complexType>
                         <xs:sequence>
@@ -63,13 +79,28 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="usecase_title" type="xs:string"/>
-                                        <xs:element name="usecase_description" type="xs:string"/>
+                                        <xs:element name="user_container">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="usecase_description" type="xs:string"/>
+                                                    <xs:element name="list" minOccurs="0">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="item" type="xs:string" maxOccurs="unbounded"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="image" type="xs:string" minOccurs="0"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+
                 <xs:element name="security">
                     <xs:complexType>
                         <xs:sequence>
@@ -77,13 +108,27 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="security_title" type="xs:string"/>
-                                        <xs:element name="security_details" type="xs:string"/>
+                                        <xs:element name="security_container">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="security_details" type="xs:string"/>
+                                                    <xs:element name="list" minOccurs="0">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="item" type="xs:string" maxOccurs="unbounded"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+
                 <xs:element name="future">
                     <xs:complexType>
                         <xs:sequence>
@@ -92,6 +137,7 @@
                                     <xs:sequence>
                                         <xs:element name="trend_title" type="xs:string"/>
                                         <xs:element name="trend_description" type="xs:string"/>
+                                        <xs:element name="image" type="xs:string" minOccurs="0"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -101,4 +147,5 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
 </xs:schema>
